@@ -1,9 +1,23 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# Destroy existing items
+Item.destroy_all
+# Count existing items before seeding
+existing_count = Item.count
+# Create 10 items (5 for each category)
+items = [
+  { name: "Stage Setup", category: "event_set_up", description: "Complete stage setup for events", price: 5000, user_id: 1 },
+  { name: "Wedding Decorations", category: "event_set_up", description: "Beautiful decorations for weddings", price: 3000, user_id: 1 },
+  { name: "Corporate Event Setup", category: "event_set_up", description: "Professional setup for corporate functions", price: 7000, user_id: 1 },
+  { name: "Birthday Party Setup", category: "event_set_up", description: "All-in-one birthday party decoration", price: 2500, user_id: 1 },
+  { name: "Outdoor Festival Setup", category: "event_set_up", description: "Complete festival arrangements and setup", price: 10000, user_id: 1 },
+  { name: "Basic Sound System", category: "sound_system", description: "Speakers and microphone setup", price: 1500, user_id: 1 },
+  { name: "Concert Sound System", category: "sound_system", description: "High-quality sound system for concerts", price: 12000, user_id: 1 },
+  { name: "DJ Sound System", category: "sound_system", description: "Complete DJ setup with turntables", price: 5000, user_id: 1 },
+  { name: "Conference Sound System", category: "sound_system", description: "Microphones and speakers for conferences", price: 3500, user_id: 1 },
+  { name: "Home Party Sound System", category: "sound_system", description: "Compact sound system for home parties", price: 2000, user_id: 1 }
+]
+# Create items in the database
+items.each do |item|
+  Item.create!(item)
+end
+# Output message
+puts "#{Item.count - existing_count} new items created."
