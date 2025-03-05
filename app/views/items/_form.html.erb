@@ -1,0 +1,5 @@
+<%= simple_form_for([@item, @booking]) do |f| %>
+  <%= f.input :date, as: :date %>
+  <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
+  <%= f.button :submit, "Submit Booking", class: "btn btn-primary" %>
+<% end %>
