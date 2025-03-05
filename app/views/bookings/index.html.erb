@@ -1,0 +1,12 @@
+
+
+<ol>
+  <% @bookings.each do |booking| %>
+  <div class="card-container ">
+    <div class="card-info">
+      <li><%= booking.user.email %>
+      <%= booking.date %></li>
+    </div>
+  </div>
+  <% end %>
+</ol>

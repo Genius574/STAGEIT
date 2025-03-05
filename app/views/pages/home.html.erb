@@ -1,2 +1,13 @@
-<h2>Welcome to STAGEIT</h2>
-
+<%= render "shared/navbar" %>
+<div class="container d-flex align-items-center justify-content-around my-5">
+  <div>
+    <h1>Welcome to STAGEIT</h1>
+    <h2>Rent items for events </h2>
+    <% if current_user %>
+    <%= link_to "View items",  items_path, class: "btn btn-primary" %>
+    <% else %>
+    <%= link_to "Login to view items",  new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <%= image_tag "homepage.png", alt: "STAGEIT LOGO", width: 400 %>
+</div>
