@@ -13,12 +13,10 @@
       <% end %>
       </div>
     </div>
-
-
   <div class="cards">
     <% @items.each do |item| %>
       <%= link_to item_path(item) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path'homepage.png'%>)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= item.photo.attached? ? cl_image_path(item.photo.key) : asset_path('homepage.png') %>')">
           <%= item.name %>
         </div>
       <% end %>
