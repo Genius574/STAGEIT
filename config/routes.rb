@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   resources :items, only: %i[index show new create] do
     resources :bookings, except: [:index]
   end
-  resources :bookings, only: [:index]
+
+  resources :bookings, only: [:index] do
+    member do
+      patch :approve
+      patch :decline
+    end
+  end
   # resources :bookings, only: %i[index]
 end
