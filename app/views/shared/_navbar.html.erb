@@ -1,8 +1,15 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+  <% if controller_name == "items" && action_name == "index"%>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "stageitlogo.png", alt: "Logo" %>
     <% end %>
+  <% else %>
+    <%= link_to items_path, class: "navbar-brand" do %>
+      <%= image_tag "stageitlogo.png", alt: "Logo" %>
+    <% end %>
+  <% end %>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,9 +20,6 @@
         <% if user_signed_in? %>
           <% if controller_name == "pages" && action_name == "home"%>
             <!-- Home page -->
-            <li class="nav-item">
-              <%= link_to "See All Items", items_path, class: "nav-link"%>
-            </li>
             <li class="nav-item dropdown">
               <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
@@ -46,9 +50,6 @@
             </li>
           <% elsif controller_name == "items" && action_name == "new" %>
             <!-- Items new page -->
-            <li class="nav-item">
-              <%= link_to "See All Items", items_path, class: "nav-link" %>
-            </li>
             <li class="nav-item dropdown">
               <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
@@ -61,9 +62,6 @@
             </li>
           <% elsif controller_name == "items" && action_name == "show" %>
             <!-- Items show page -->
-            <li class="nav-item">
-              <%= link_to "See All Items", items_path, class: "nav-link" %>
-            </li>
             <li class="nav-item dropdown">
               <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
