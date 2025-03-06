@@ -1,12 +1,19 @@
 
-
-<ol>
-  <% @bookings.each do |booking| %>
-  <div class="card-container ">
-    <div class="card-info">
-      <li><%= booking.user.email %>
-      <%= booking.date %></li>
-    </div>
+<div class="container my-5">
+  <div id="bookings">
+    <ol>
+      <% if @bookings.any? %>
+        <% @bookings.each do |booking| %>
+        <div class="card-container ">
+          <div class="card-info">
+            <li><%= booking.item.name %>
+            <%= booking.date %></li>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <em>Sorry, You don't have any bookings yet!</em>
+      <% end %>
+    </ol>
   </div>
-  <% end %>
-</ol>
+</div>
