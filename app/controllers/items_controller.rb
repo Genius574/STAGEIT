@@ -4,7 +4,11 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     if params[:query].present?
-      @items = Item.search_by_name_and_category(params[:query])
+      @items = @items.search_by_name_and_category(params[:query])
+    end
+
+    if params[:category].present?
+      @items = @items.search_by_name_and_category(params[:category])
     end
   end
 

@@ -10,7 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/button";
 
 body {
   background-color: white;
+}
+
+.item-title {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  color: black;
+  font-size: 26px;
 }

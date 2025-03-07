@@ -1,4 +1,6 @@
 <div class="container my-5">
+<h3 style="text-align: center; font-weight: bold; font-size: 2rem; color: #1EDD88; font-family: 'Oswald', sans-serif;">List Your Items for Sale</h3>
+<p style="text-align: center">Turn unused items into cash! Post your item, set your price, and connect with buyers in a few easy steps.</p>
   <%= simple_form_for(@item) do |f| %>
     <%= f.input :name %>
     <%= f.input :category, collection: [["Event Setup", "event_set_up"], ["Sound System", "sound_system"]], prompt: "Select a category" %>  <%= f.input :description %>
