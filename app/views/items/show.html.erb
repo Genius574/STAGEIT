@@ -1,10 +1,12 @@
 <div class="container">
-  <h2>Full details of this <strong><%= @item.name %></strong>:</h2>
+<h1 class="item-title text-center display-4 font-weight-bold" style="font-family: 'Oswald', sans-serif; padding: 15px;">
+  Take your event to new heights with the <strong class="text-success"><%= @item.name.upcase %></strong>!
+</h1>
+
   <div class="card-trip">
   <%= @item.photo.attached? ? cl_image_tag(@item.photo.key) : image_tag('homepage.png') %>
   <div class="card-trip-infos">
     <div>
-      <h2><%= @item.name %></h2>
       <p><%= @item.description %></p>
       <p>Listed by: <%= @item.user.first_name %> <%= @item.user.last_name %></p>
     </div>

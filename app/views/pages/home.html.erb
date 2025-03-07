@@ -1,11 +1,16 @@
 <div class="container d-flex align-items-center justify-content-around my-5">
   <div>
     <h1>Welcome to STAGEIT</h1>
-    <h2>Rent items for events </h2>
+  <p>
+      Rent premium event items with STAGEIT.<br>
+      Affordable, reliable rentals for unforgettable events.<br>
+      Make your event extraordinary today!<br>
+  </p>
+
     <% if current_user %>
-    <%= link_to "View items",  items_path, class: "btn btn-primary" %>
+    <%= link_to "Browse Items",  items_path, class: "btn btn-primary" %>
     <% else %>
-    <%= link_to "Login to view items",  new_user_session_path, class: "btn btn-primary" %>
+    <%= link_to "Login to Browse Our Collection",  new_user_session_path, class: "btn btn-primary" %>
     <% end %>
   </div>
   <%= image_tag "homepage.png", alt: "STAGEIT LOGO", width: 400 %>
