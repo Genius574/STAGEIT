@@ -55,7 +55,7 @@ puts "\n:shopping_trolley: Seeding items..."
 # item photos (using URLs)
 stage_light_photo_url = "https://www.terralec.co.uk/Portals/54/product/images/prdad78623e-dceb-4ec3-80a7-52dc7b69bedc.jpg"
 speakersystem_photo_url = "https://sbrprosound.co.za/wp-content/uploads/2022/12/Lane-Pro-SP-LS-Passive-Combo-T-1024x887.jpg"
-wireless_photo_url = "https://aragencies.co.za/cdn/shop/products/LR634.jpg?v=1679817572"
+# wireless_photo_url = "https://aragencies.co.za/cdn/shop/products/LR634.jpg?v=1679817572"
 stage_photo_url = "https://i.pinimg.com/736x/2d/86/e6/2d86e6fa3f589e03103211bcebb67475.jpg"
 
 # Creating items with categories
@@ -83,17 +83,17 @@ speakersystem = Item.create!(
 speakersystem.photo.attach(io: URI.open(speakersystem_photo_url), filename: 'speakersystem.png')
 puts ":speaker system: #{speakersystem.name} is now available, offered by #{bob.first_name}."
 
-wirelessmicrophoneset = Item.create!(
-  name: "Wireless Microphone Set",
-  description: "A professional-grade wireless microphone set, ideal for performers, hosts, or speakers.
-                Featuring long-range capability and interference-free signals,
-                it ensures a seamless performance for all types of musical events.",
-  price: 300,
-  category: "sound_system",  # Added category
-  user_id: carol.id
-)
-wirelessmicrophoneset.photo.attach(io: URI.open(wireless_photo_url), filename: 'WirelessMicrophoneSet.png')
-puts ":Wireless Microphone Set: #{wirelessmicrophoneset.name} is now available, offered by #{carol.first_name}."
+# wirelessmicrophoneset = Item.create!(
+#   name: "Wireless Microphone Set",
+#   description: "A professional-grade wireless microphone set, ideal for performers, hosts, or speakers.
+#                 Featuring long-range capability and interference-free signals,
+#                 it ensures a seamless performance for all types of musical events.",
+#   price: 300,
+#   category: "sound_system",  # Added category
+#   user_id: carol.id
+# )
+# wirelessmicrophoneset.photo.attach(io: URI.open(wireless_photo_url), filename: 'WirelessMicrophoneSet.png')
+# puts ":Wireless Microphone Set: #{wirelessmicrophoneset.name} is now available, offered by #{carol.first_name}."
 
 stage = Item.create!(
   name: "Portable Stage",
@@ -128,13 +128,13 @@ Booking.create!(
 )
 puts ":woman: #{carol.first_name} has a pending booking for #{speakersystem.name} for 3 days. Total Price: $1000."
 
-Booking.create!(
-  item_id: wirelessmicrophoneset.id,
-  user_id: dave.id,
-  status: 1,
-  created_at: Time.now,
-  updated_at: Time.now
-)
-puts ":man: #{dave.first_name} has booked the #{wirelessmicrophoneset.name} for 1 day. Total Price: $300."
+# Booking.create!(
+#   item_id: wirelessmicrophoneset.id,
+#   user_id: dave.id,
+#   status: 1,
+#   created_at: Time.now,
+#   updated_at: Time.now
+# )
+# puts ":man: #{dave.first_name} has booked the #{wirelessmicrophoneset.name} for 1 day. Total Price: $300."
 
 puts "\n:date: Seeding complete!"
