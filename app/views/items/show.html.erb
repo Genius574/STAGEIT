@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Full details of this <strong><%= @item.name %></strong>:</h2>
   <div class="card-trip">
-  <%= image_tag "logo.jpg", alt: "item-each" %>
+  <%= @item.photo.attached? ? cl_image_tag(@item.photo.key) : image_tag('homepage.png') %>
   <div class="card-trip-infos">
     <div>
       <h2><%= @item.name %></h2>

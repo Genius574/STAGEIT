@@ -25,8 +25,6 @@
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>
@@ -43,8 +41,6 @@
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>
@@ -55,8 +51,7 @@
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>
@@ -67,23 +62,19 @@
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Create Yours", new_item_path, class: "dropdown-item" %>
+                 <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>
           <% elsif controller_name == "bookings" && action_name == "index" %>
             <!-- Bookings page -->
-            <li class="nav-item">
-              <%= link_to "See All Items", items_path, class: "nav-link" %>
-            </li>
             <li class="nav-item dropdown">
               <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= image_tag "profile.jpg", class: "avatar", alt: "dropdown menu" %>
               </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Create Yours", new_item_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>
